@@ -1,0 +1,33 @@
+<table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+
+          <th scope="col">Adress</th>
+
+          <th scope="col">PinCode</th>
+          <th scope="col">Country</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let data of model; index as i">
+          <td>
+              <a [routerLink]="['/edit/',data.UserId]">Edit</a>
+              <a (click)="deleteCustomer(data.UserId)">Delete</a>
+          </td>
+          <td>
+            
+            {{ data.FirstName }}
+          </td>
+          <td>{{data.LastName}}</td>
+          <td>{{data.Email}}</td>
+          <td>{{data.Address}}</td>
+          <td>{{data.PinCode}}</td>
+          <td>{{data.Country}}</td>
+        </tr>
+        </tbody>
+      </table>
